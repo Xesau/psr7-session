@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Ojhaujjwal\Session;
 
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+use Psr\Http\Server\MiddlewareInterface;
 use Ojhaujjwal\Session\Handler\HandlerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -40,12 +40,12 @@ final class SessionMiddleware implements MiddlewareInterface
      * TODO: maybe, make request attribute configurable
      *
      * @param ServerRequestInterface $request
-     * @param DelegateInterface $delegate
+     * @param RequestHandlerInterface $delegate
      * @return ResponseInterface
      */
     public function process(
         ServerRequestInterface $request,
-        DelegateInterface $delegate
+        RequestHandlerInterface $delegate
     ) : ResponseInterface
     {
         $sessionManager = new SessionManager($this->sessionHandler, $request, $this->options);
@@ -54,7 +54,7 @@ final class SessionMiddleware implements MiddlewareInterface
         $request = $request->withAttribute('sessionManager', $sessionManager);
         $request = $request->withAttribute('session', $sessionManager->getStorage());
 
-        $response = $delegate->process($request);
+        $response = $delegate->handle($request);
         $response = $sessionManager->close($response);
 
         return $response;
