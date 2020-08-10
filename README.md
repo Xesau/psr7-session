@@ -1,11 +1,6 @@
-PSR-7 Session
+PSR-7/PSR-15 Session
 ===================
-[![Build Status][travis-image]][travis-url]
-[![Coverage Status][coverage-image]][coverage-url]
-[![Latest Stable Version](https://poser.pugx.org/ujjwal/psr7-http-session/v/stable)](https://packagist.org/packages/ujjwal/psr7-http-session)
-[![Total Downloads](https://poser.pugx.org/ujjwal/psr7-http-session/downloads)](https://packagist.org/packages/ujjwal/psr7-http-session)
-[![Latest Unstable Version](https://poser.pugx.org/ujjwal/psr7-http-session/v/unstable)](https://packagist.org/packages/ujjwal/psr7-http-session)
-[![License](https://poser.pugx.org/ujjwal/psr7-http-session/license)](https://packagist.org/packages/ujjwal/psr7-http-session)
+Fork of ujjwal/psr7-session, made to work with PSR-15 middleware.
 
 Alternative to PHP's native session handler. It does not depend on PHP's session capability. It can be used with non-typical php based applications like with [react/http](https://github.com/reactphp/http).
 
