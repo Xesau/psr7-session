@@ -4,8 +4,7 @@ Fork of ujjwal/psr7-session, made to work with PSR-15 middleware.
 
 Alternative to PHP's native session handler. It does not depend on PHP's session capability. It can be used with non-typical php based applications like with [react/http](https://github.com/reactphp/http).
 
-### But, why?
-![But, why?](http://vignette2.wikia.nocookie.net/vampirediaries/images/c/ca/But-why-meme-generator-but-why-84103d.jpg/revision/latest?cb=20130811194815])
+### Benefits
 - You don't have to depend on `session_` functions which means you can write testable code.
 - You don't have to depend on `$_SESSION` superglobal allowing you to write more testable code. 
 - You can even use this for non-typical php based applications like with [react/http](https://github.com/reactphp/http).
