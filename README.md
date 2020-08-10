@@ -41,7 +41,7 @@ $response = $sessionManager->close($response);
 ```
 
 ### Installation
-`composer require ujjwal/psr7-http-session`
+`composer require xesau/psr7-http-session`
 
 ### Session Options
 
