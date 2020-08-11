@@ -51,8 +51,8 @@ final class SessionMiddleware implements MiddlewareInterface
         $sessionManager = new SessionManager($this->sessionHandler, $request, $this->options);
         $sessionManager->start();
 
-        $request = $request->withAttribute('sessionManager', $sessionManager);
-        $request = $request->withAttribute('session', $sessionManager->getStorage());
+        $request = $request->withAttribute(SessionManager::class, $sessionManager);
+        $request = $request->withAttribute(Storage::class, $sessionManager->getStorage());
 
         $response = $delegate->handle($request);
         $response = $sessionManager->close($response);
