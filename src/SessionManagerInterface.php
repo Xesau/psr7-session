@@ -52,4 +52,11 @@ interface SessionManagerInterface
      * @return StorageInterface
      */
     public function getStorage(): StorageInterface;
+
+    /**
+     * Detemrine if the request provided a session cookie
+     *
+     * @return bool
+     */
+    public function hasSession(): bool;
 }

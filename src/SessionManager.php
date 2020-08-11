@@ -254,4 +254,8 @@ final class SessionManager implements SessionManagerInterface
     {
         return $this->options['name'];
     }
+
+    public function hasSession(): bool {
+        return isset($this->request->getCookieParams()[$this->getName()]);
+    }
 }
